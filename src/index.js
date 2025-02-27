@@ -121,7 +121,10 @@ async function refresh(
     state.items = processItems(
       items
         .filter((i) => i.due)
-        .filter((i) => render.isToday(render.parseDate(i.due.date))),
+        .filter((i) =>
+          render.isToday(render.parseDate(i.due.date)) ||
+          render.isOverdue(render.parseDate(i.due.date))
+        ),
     );
   } else {
     state.items = processItems(

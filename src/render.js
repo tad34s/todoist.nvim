@@ -14,7 +14,7 @@ const content = {
   items: [],
 };
 
-module.exports = { full, line, lineToItemIndex, parseDate, isToday };
+module.exports = { full, line, lineToItemIndex, parseDate, isToday, isOverdue };
 
 async function full(nvim, state) {
   content.header = renderHeader(state);
